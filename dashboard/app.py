@@ -46,8 +46,8 @@ with ui.sidebar(open="open"):
         class_="text-center",
     )
     ui.hr()
-    ui.input_numeric("temp_low", "Lowest Temperature", 32)
-    ui.input_numeric("temp_high", "Highest Temperature", 70)
+    ui.input_numeric("temp_low", "Lowest Temperature", 30)
+    ui.input_numeric("temp_high", "Highest Temperature", 75)
     ui.h6("Links:")
     ui.a(
         "GitHub Source",
@@ -108,7 +108,7 @@ with ui.layout_columns():
         def display_temp():
             """Get the latest reading and return a temperature string"""
             deque_snapshot, df, latest_dictionary_entry = reactive_calc_combined()
-            return f"{latest_dictionary_entry['temp']} C"
+            return f"{latest_dictionary_entry['temp']} F"
 
         "Mostly Sunny"
 
@@ -156,7 +156,7 @@ with ui.layout_columns(col_widths=(4, 8)): # Making each card a different width
                 y="temp",
                 title="Temperature Readings with Regression Line",
                 labels={"temp": "Temperature (°F)", "timestamp": "Time"},
-                color_discrete_sequence=["blue"] )
+                color_discrete_sequence=["Black"] )
                 
                 # Linear regression - we need to get a list of the
                 # Independent variable x values (time) and the
